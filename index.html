@@ -1661,6 +1661,57 @@
   }
 
   /* =========================================================
+     KEP — DECK GALLERY (slide image preview)
+     ========================================================= */
+  .deck-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+  .deck-slide {
+    margin: 0;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .deck-slide:hover {
+    border-color: var(--accent-warm);
+    transform: translateY(-2px);
+  }
+  .deck-slide a {
+    display: block;
+    border: none;
+  }
+  .deck-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--rule);
+  }
+  .deck-slide figcaption {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .deck-slide .dp-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent-warm);
+    margin: 0;
+  }
+  .deck-slide .dp-title {
+    font-size: 13.5px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  /* =========================================================
      KEP — DECK 다운로드 섹션
      ========================================================= */
   .deck-block { margin-top: 56px; }
@@ -1701,7 +1752,7 @@
   @media (max-width: 760px) {
     .stats-row.stats-2col { grid-template-columns: 1fr; }
     .workflow-block, .cycle-block, .learning-block { padding: 36px 24px; }
-    .workflow-grid, .hypothesis-grid, .cycle-points, .learning-grid, .deck-grid {
+    .workflow-grid, .hypothesis-grid, .cycle-points, .learning-grid, .deck-grid, .deck-gallery {
       grid-template-columns: 1fr;
     }
   }
@@ -2004,22 +2055,34 @@
     </p>
 
     <div class="deck-block">
-      <div class="deck-grid">
-        <div class="deck-page">
-          <div class="dp-num">01</div>
-          <h4>대치동 4년 + 비전 공감</h4>
-          <p>대치동 입시 상담 4년의 운영 경험 + 단일 점수 의사결정 한계 → 학생 맞춤 진로교육 전환 공감.</p>
-        </div>
-        <div class="deck-page">
-          <div class="dp-num">02</div>
-          <h4>AI 운영 워크플로 다이어그램</h4>
-          <p>유튜브도사·타임투쇼츠의 다단계 LLM 파이프라인 구조.</p>
-        </div>
-        <div class="deck-page">
-          <div class="dp-num">03</div>
-          <h4>운영 맥락 적용 가설</h4>
-          <p>학부모 문의 분류 / 상담 기록 후속 체크리스트 / 컨설턴트 피드백 구조화 / 입시 콘텐츠 재가공.</p>
-        </div>
+      <div class="deck-gallery">
+        <figure class="deck-slide">
+          <a href="deck-preview-1.png" target="_blank" rel="noopener" aria-label="Slide 1 확대 보기">
+            <img src="deck-preview-1.png" alt="Deck Slide 1 — 대치동 4년 + 비전 공감" loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="dp-num">01</span>
+            <span class="dp-title">대치동 4년 + 비전 공감</span>
+          </figcaption>
+        </figure>
+        <figure class="deck-slide">
+          <a href="deck-preview-2.png" target="_blank" rel="noopener" aria-label="Slide 2 확대 보기">
+            <img src="deck-preview-2.png" alt="Deck Slide 2 — AI 운영 워크플로 다이어그램" loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="dp-num">02</span>
+            <span class="dp-title">AI 운영 워크플로 다이어그램</span>
+          </figcaption>
+        </figure>
+        <figure class="deck-slide">
+          <a href="deck-preview-3.png" target="_blank" rel="noopener" aria-label="Slide 3 확대 보기">
+            <img src="deck-preview-3.png" alt="Deck Slide 3 — 운영 맥락 적용 가설 4가지" loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="dp-num">03</span>
+            <span class="dp-title">운영 맥락 적용 가설 4가지</span>
+          </figcaption>
+        </figure>
       </div>
 
       <div class="download-row">
@@ -2053,7 +2116,7 @@
 <section id="contact" class="contact-section">
   <div class="container">
     <span class="section-label">05 — Contact · For 한국교육파트너스 채용팀</span>
-    <h2 class="section-h2">서류 통과 후 직무 인터뷰에서<br>더 자세히 말씀드릴 수 있으면 좋겠습니다.</h2>
+    <h2 class="section-h2">이 페이지에서 다 담지 못한 부분이 많습니다.<br>관심 있으시면 더 자세히 이야기 나눌 수 있으면 좋겠습니다.</h2>
     <p class="lede">
       대치동에서 매 시즌 직접 운영해 온 사전 설문 → 대면 상담 → 후속 관리 → 파이널 콜의 사이클을,
       <strong>온라인 입시학원과 AI 기반 학생 맞춤 교육 운영 환경</strong>에서 다시 작동시킬 수 있는 환경이라고 판단해 지원드립니다.
